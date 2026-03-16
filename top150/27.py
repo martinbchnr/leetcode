@@ -27,6 +27,19 @@ val = 2 # 3 / 5
 #         print("done", nums)
 #     return k, nums
 
+def removeElement(nums: List[int], val: int) -> int:
+    i = 0
+    k = len(nums) - 1  
+    while i <= k:
+        if nums[i] == val:
+            nums[i] = nums[k]
+            nums[k] = val
+            k -= 1
+        else:
+            i += 1
+            
+    return i
+
 def removeElement(nums, val):
     i = 0
     n = len(nums)
