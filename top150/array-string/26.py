@@ -1,7 +1,7 @@
 from typing import List
 
 # nums = [1,1,2]
-nums = [0,0,1,1,1,2,2,3,3,4]
+nums = [0,0,1,1,1]
 
 def removeDuplicates(nums: List[int]) -> int:
     # my own solution
@@ -20,20 +20,18 @@ def removeDuplicates(nums: List[int]) -> int:
     #         k += 1
     #         i += 1
     #         j = i
-    # print(nums)
+    # # print(nums)
     # return k
 
     # alternative with for loop
-    if not nums:
-        return 0
-
-    i = 0
-    for j in range(1, len(nums)):
-        if nums[j] != nums[i]:
-            i += 1
-            nums[i] = nums[j]
-
-    return i + 1
+    k = 1
+    for i in range(1,len(nums)):
+        if nums[i] != nums[i-1]:
+            print(nums)
+            nums[k] = nums[i]
+            print(nums)
+            k = k+1
+    return k
     
     
 
